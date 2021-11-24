@@ -1,8 +1,8 @@
-create table net_io_counters(
-    id int auto_increment primary key,
-    sent decimal(10,5),
-    recv decimal(10,5),
-    data datetime
+CREATE TABLE cotacao(
+    id_cotacao INT PRIMARY KEY AUTO_INCREMENT,
+    nome_acao VARCHAR(45),
+    cotacao_atual INT,
+    hora_cotacao DATETIME
 );
 
-select * from net_io_counters;
+SELECT * FROM cotacao;
