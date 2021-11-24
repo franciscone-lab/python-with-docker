@@ -1,13 +1,13 @@
 import mysql.connector
 from credentials import usr, pswd
 
-def insert_db(value1,value2,value3, value4):
+def insert_db(value1):
     try:  
         mydb = mysql.connector.connect(
             host = "localhost",
             user = usr,
             password = pswd,
-            database = "moni"
+            database = "bancobroker"
         )
 
         if mydb.is_connected():
@@ -16,8 +16,8 @@ def insert_db(value1,value2,value3, value4):
 
             mycursor = mydb.cursor()
 
-            sql_query = "INSERT INTO leituraPy(porcCpu,porcRAM,porcDisco,dataHoraCap,fkServidor) VALUES (%s,%s,%s,now(),%s)"
-            val = [value1,value2,value3, value4]
+            sql_query = "INSERT INTO cotacao(nome_acao, cotacao_atual ,hora_cotacao) VALUES ('ITSA4',%s,now())"
+            val = [value1]
             mycursor.execute(sql_query, val)
 
             mydb.commit()

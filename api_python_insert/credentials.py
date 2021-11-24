@@ -1,4 +1,4 @@
 usr = 'root'
-pswd = '7010'
+pswd = 'urubu100'
 
 
